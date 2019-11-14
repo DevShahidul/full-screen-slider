@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Full screen slider</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/full.screen.slide.css">
+</head>
+<body>
+   <section class="full-screen-slider-section">
+       <div class="background-slider">
+            <div class="swiper-container" id="background-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide video-slide">
+                    <div class="slide-video">
+                       <div class="slide-inner video">
+                          <video muted loop>
+                              <source src="video/the_great_agency.mp4" type="video/mp4" />
+                              <p>Your browser does not support the video tag.</p>
+                          </video>
+                       </div>
+                       <div class="video-mask-wrap">
+                           <img src="img/video_mask.png" alt="Video mask" class="video-mask">
+                       </div>
+                    </div>
+                </div>
+                <div class="swiper-slide image-slide">
+                  <div class="slide-inner" style="background-image:url(img/header-cover-img.jpg)"></div>
+                </div>
+                <div class="swiper-slide image-slide">
+                  <div class="slide-inner" style="background-image:url(img/header-cover-img3.jpg)"></div>
+                </div>
+                <div class="swiper-slide image-slide">
+                  <div class="slide-inner" style="background-image:url(img/header-cover-img4.jpg)"></div>
+                </div>
+              </div>
+            </div>
+        </div>
+       <div class="content-slider">
+            <div class="swiper-container" id="content-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slide-content-wrap">
+                       <div class="slide-title">
+                           <div class="line-text">Digital Agency</div>
+                       </div>
+                       <div class="slide-content">
+                           Storytelling, branding and 
+                           digital experiences.
+                       </div>             
+                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                   </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content-wrap">
+                       <div class="slide-title">
+                           <div class="line-text">Digital Agency</div>
+                       </div>
+                       <div class="slide-content">
+                           Storytelling, branding and 
+                           digital experiences.
+                       </div>             
+                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                   </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content-wrap">
+                       <div class="slide-title">
+                           <div class="line-text">Digital Agency</div>
+                       </div>
+                       <div class="slide-content">
+                           Storytelling, branding and 
+                           digital experiences.
+                       </div>             
+                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                   </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-content-wrap">
+                       <div class="slide-title">
+                           <div class="line-text">Digital Agency</div>
+                       </div>
+                       <div class="slide-content">
+                           Storytelling, branding and 
+                           digital experiences.
+                       </div>             
+                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                   </div>
+                </div>
+              </div>
+              <!-- Add Arrows -->
+               <div class="swiper-navigation-wrap">
+                   <div class="moveElementWrap">
+                       <div class="swiper-button-prev navigation-btn moveElement"></div>
+                   </div>
+                   <div class="moveElementWrap">
+                       <div class="swiper-button-next navigation-btn moveElement"></div>
+                   </div>
+               </div>
+               <!-- Add Pagination -->
+               <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script type="text/javascript">
+        
+        // Autoplay video function;
+        var $video = $("#background-slider video").get(0);
+        
+        // Content slider
+        var totalSlide = $('#content-slider .swiper-slide').length;
+        
+        var interleaveOffset = 0.5;
+        var backgroundSwiperOptions = {
+          loop: true,
+          speed: 1000,
+          grabCursor: false,
+          watchSlidesProgress: false,
+          mousewheelControl: false,
+          keyboardControl: false,
+          allowTouchMove: false,
+          followFinger: false,
+          longSwipes: false,
+          shortSwipes: false,
+          on: {
+            progress: function() {
+              var swiper = this;
+              for (var i = 0; i < swiper.slides.length; i++) {
+                var slideProgress = swiper.slides[i].progress;
+                var innerOffset = swiper.width * interleaveOffset;
+                var innerTranslate = slideProgress * innerOffset;
+                swiper.slides[i].querySelector(".slide-inner").style.transform =
+                  "translate3d(" + innerTranslate + "px, 0, 0)";
+              }      
+            },
+            touchStart: function() {
+              var swiper = this;
+              for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = "";
+              }
+            },
+            setTransition: function(speed) {
+              var swiper = this;
+              for (var i = 0; i < swiper.slides.length; i++) {
+                swiper.slides[i].style.transition = speed + "ms";
+                swiper.slides[i].querySelector(".slide-inner").style.transition =
+                  speed + "ms";
+              }
+            }
+          }
+        };
+        var contentSwiperOptions = {
+          loop: true,
+          speed: 1000,
+          grabCursor: false,
+          watchSlidesProgress: false,
+          mousewheelControl: false,
+          keyboardControl: false,
+          allowTouchMove: false,
+          followFinger: false,
+          longSwipes: false,
+          shortSwipes: false,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+                if(totalSlide > 9){
+                    return '<span class="' + className + '">' + (index + 1) + '</span>';
+                }else{
+                    return '<span class="' + className + '">0' + (index + 1) + '</span>';
+                }
+            },
+          },
+          on: {
+            init: darkNav,          // do also on init
+            slideChange: darkNav    // is this needed?
+          },
+          breakpoints: {
+            // when window width is >= 320px
+            767: {
+              direction: 'vertical',
+              pagination: {
+                el: '.swiper-pagination',
+                 type: 'fraction',
+                 clickable: true,
+                 renderCustom: function (swiper, current, total) {
+                    function numberAppend(d) {
+                        return (d < 10) ? '0' + d.toString() : d.toString();
+                    }
+                    return numberAppend(current) + ' of ' + numberAppend(total); 
+                 }
+              },
+            },
+          },
+        };
+        var backgroundSwiper = new Swiper("#background-slider", backgroundSwiperOptions);
+        var contentSwiper = new Swiper("#content-slider", contentSwiperOptions);
+        
+        contentSwiper.controller.control = backgroundSwiper;
+        backgroundSwiper.controller.control = contentSwiper;
+        
+        
+        var paginationControllWidth = $('.fullScreen-slider-section .swiper-pagination').outerWidth();
+        $('.swiper-navigation-wrap, .slide-content-wrap').css({
+            left: paginationControllWidth + 25
+        });
+        
+        
+        // Add class for color change
+        function darkNav() {
+            if ( $(this).find('.swiper-slide-active').hasClass('black-content') ) {
+              $('body').addClass('darknav')
+            } else {
+              $('body').removeClass('darknav');
+            }
+        }
+    </script>
+</body>
+</html>
