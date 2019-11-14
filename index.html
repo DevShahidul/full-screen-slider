@@ -18,9 +18,9 @@
                               <source src="video/the_great_agency.mp4" type="video/mp4" />
                               <p>Your browser does not support the video tag.</p>
                           </video>
-                       </div>
-                       <div class="video-mask-wrap">
-                           <img src="img/video_mask.png" alt="Video mask" class="video-mask">
+                          <div class="video-mask-wrap">
+                               <img src="img/video_mask.png" alt="Video mask" class="video-mask">
+                          </div>
                        </div>
                     </div>
                 </div>
@@ -34,71 +34,82 @@
                   <div class="slide-inner" style="background-image:url(img/header-cover-img4.jpg)"></div>
                 </div>
               </div>
-            </div>
-        </div>
-       <div class="content-slider">
-            <div class="swiper-container" id="content-slider">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="slide-content-wrap">
-                       <div class="slide-title">
-                           <div class="line-text">Digital Agency</div>
-                       </div>
-                       <div class="slide-content">
-                           Storytelling, branding and 
-                           digital experiences.
-                       </div>             
-                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
-                   </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-content-wrap">
-                       <div class="slide-title">
-                           <div class="line-text">Digital Agency</div>
-                       </div>
-                       <div class="slide-content">
-                           Storytelling, branding and 
-                           digital experiences.
-                       </div>             
-                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
-                   </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-content-wrap">
-                       <div class="slide-title">
-                           <div class="line-text">Digital Agency</div>
-                       </div>
-                       <div class="slide-content">
-                           Storytelling, branding and 
-                           digital experiences.
-                       </div>             
-                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
-                   </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="slide-content-wrap">
-                       <div class="slide-title">
-                           <div class="line-text">Digital Agency</div>
-                       </div>
-                       <div class="slide-content">
-                           Storytelling, branding and 
-                           digital experiences.
-                       </div>             
-                       <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
-                   </div>
-                </div>
-              </div>
-              <!-- Add Arrows -->
-               <div class="swiper-navigation-wrap">
+              
+               <!--<div class="swiper-navigation-wrap">
                    <div class="moveElementWrap">
                        <div class="swiper-button-prev navigation-btn moveElement"></div>
                    </div>
                    <div class="moveElementWrap">
                        <div class="swiper-button-next navigation-btn moveElement"></div>
                    </div>
-               </div>
-               <!-- Add Pagination -->
-               <div class="swiper-pagination"></div>
+               </div>-->
+            </div>
+        </div>
+       <div class="content-slider">  
+           <div class="content-slider-inner">  
+                <div class="swiper-container" id="content-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-content-wrap">
+                           <div class="slide-title">
+                               <div class="line-text">Digital Agency</div>
+                           </div>
+                           <div class="slide-content">
+                               Storytelling, branding and 
+                               digital experiences.
+                           </div>             
+                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                       </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content-wrap">
+                           <div class="slide-title">
+                               <div class="line-text">Digital Agency</div>
+                           </div>
+                           <div class="slide-content">
+                               Storytelling, branding and 
+                               digital experiences.
+                           </div>             
+                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                       </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content-wrap">
+                           <div class="slide-title">
+                               <div class="line-text">Digital Agency</div>
+                           </div>
+                           <div class="slide-content">
+                               Storytelling, branding and 
+                               digital experiences.
+                           </div>             
+                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                       </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content-wrap">
+                           <div class="slide-title">
+                               <div class="line-text">Digital Agency</div>
+                           </div>
+                           <div class="slide-content">
+                               Storytelling, branding and 
+                               digital experiences.
+                           </div>             
+                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                       </div>
+                    </div>
+                  </div>
+
+                   <div class="swiper-navigation-wrap">
+                       <div class="moveElementWrap">
+                           <div class="swiper-button-prev navigation-btn moveElement"></div>
+                       </div>
+                       <div class="moveElementWrap">
+                           <div class="swiper-button-next navigation-btn moveElement"></div>
+                       </div>
+                   </div>
+
+                   <div class="swiper-pagination"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -125,6 +136,10 @@
           followFinger: false,
           longSwipes: false,
           shortSwipes: false,
+          /*navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+          },*/
           on: {
             progress: function() {
               var swiper = this;
@@ -163,6 +178,10 @@
           followFinger: false,
           longSwipes: false,
           shortSwipes: false,
+          effect: 'fade',
+          fadeEffect: {
+            crossFade: true
+          },
           navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
@@ -207,11 +226,36 @@
         backgroundSwiper.controller.control = contentSwiper;
         
         
-        var paginationControllWidth = $('.fullScreen-slider-section .swiper-pagination').outerWidth();
+        var paginationControllWidth = $('.full-screen-slider-section .swiper-pagination').outerWidth();
         $('.swiper-navigation-wrap, .slide-content-wrap').css({
             left: paginationControllWidth + 25
         });
         
+        $('.swiper-slide .slide-content').each(function(){
+            var $this = $(this);
+            $(function() {
+                var lines = $this.text().split('\n');
+                var paras = '';
+                $.each(lines, function(i, line) {
+                    line = $.trim(line);
+                    if (line) {
+                        paras += '<p class="line-text">' + line + '</p>';
+                    };
+                });
+                $this.html(paras);
+                
+                /*$this.find('.line-text').each(function (index) {
+                    var characters = $(this).text().split("");
+
+                    $this = $(this);
+                    $this.empty();
+                    $.each(characters, function (i, el) {
+                    $this.append("<span>" + el + "</span");
+                    });
+
+                });*/
+            });
+        });    
         
         // Add class for color change
         function darkNav() {
