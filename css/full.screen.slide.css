@@ -446,7 +446,7 @@ body {
         max-height: 100vh;
     }
     
-    .background-slider-wrap .slide-inner video{
+    .background-slider .slide-inner video{
         display: none;
     }
     
