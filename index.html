@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Full screen slider</title>
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/full.screen.slide.css">
 </head>
 <body>
    <section class="full-screen-slider-section">
+      <div class="section-overlay-mask pink"></div>
+      <div class="section-overlay-mask black"></div>
        <div class="background-slider">
             <div class="swiper-container" id="background-slider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide video-slide">
                     <div class="slide-video">
+                       <img src="img/mobile-slide1.jpg" alt="" class="mobi">
                        <div class="slide-inner video">
                           <video muted loop>
                               <source src="video/the_great_agency.mp4" type="video/mp4" />
@@ -25,24 +29,33 @@
                     </div>
                 </div>
                 <div class="swiper-slide image-slide">
-                  <div class="slide-inner" style="background-image:url(img/header-cover-img.jpg)"></div>
+                  <div class="slide-inner">
+                      <div class="slide-bg-wrap">
+                          <div class="slide-bg" style="background-image:url(img/header-cover-img.jpg)">
+                              <img src="img/mobile-slide2.jpg" alt="" class="mobi">
+                          </div>
+                      </div>
+                  </div>
                 </div>
                 <div class="swiper-slide image-slide">
-                  <div class="slide-inner" style="background-image:url(img/header-cover-img3.jpg)"></div>
+                  <div class="slide-inner">
+                      <div class="slide-bg-wrap">
+                          <div class="slide-bg" style="background-image:url(img/header-cover-img3.jpg)">
+                              <img src="img/mobile-slide3.jpg" alt="" class="mobi">
+                          </div>
+                      </div>
+                  </div>
                 </div>
                 <div class="swiper-slide image-slide">
-                  <div class="slide-inner" style="background-image:url(img/header-cover-img4.jpg)"></div>
+                  <div class="slide-inner">
+                      <div class="slide-bg-wrap">
+                          <div class="slide-bg" style="background-image:url(img/header-cover-img4.jpg)">
+                              <img src="img/mobile-slide4.jpg" alt="" class="mobi">
+                          </div>
+                      </div>
+                  </div>
                 </div>
               </div>
-              
-               <!--<div class="swiper-navigation-wrap">
-                   <div class="moveElementWrap">
-                       <div class="swiper-button-prev navigation-btn moveElement"></div>
-                   </div>
-                   <div class="moveElementWrap">
-                       <div class="swiper-button-next navigation-btn moveElement"></div>
-                   </div>
-               </div>-->
             </div>
         </div>
        <div class="content-slider">  
@@ -73,7 +86,7 @@
                            <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
                        </div>
                     </div>
-                    <div class="swiper-slide">
+                    <div class="swiper-slide black-content">
                         <div class="slide-content-wrap">
                            <div class="slide-title">
                                <div class="line-text">Digital Agency</div>
@@ -100,10 +113,12 @@
                   </div>
 
                    <div class="swiper-navigation-wrap">
-                       <div class="moveElementWrap">
+                       <div class="prev-button">
+                           <div class="slideArrowWrap swiper-prev"></div>
                            <div class="swiper-button-prev navigation-btn moveElement"></div>
                        </div>
-                       <div class="moveElementWrap">
+                       <div class="next-button">
+                           <div class="slideArrowWrap swiper-next"></div>
                            <div class="swiper-button-next navigation-btn moveElement"></div>
                        </div>
                    </div>
@@ -114,7 +129,8 @@
         </div>
     </section>
     
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/tweenmax.min.js"></script>
     <script src="js/swiper.min.js"></script>
     <script type="text/javascript">
         
@@ -164,6 +180,11 @@
                 swiper.slides[i].querySelector(".slide-inner").style.transition =
                   speed + "ms";
               }
+            },
+            init: function (swiper) {
+              setTimeout(function(){
+                $video.play();
+              }, .2)
             }
           }
         };
@@ -183,8 +204,8 @@
             crossFade: true
           },
           navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
+            nextEl: ".swiper-next",
+            prevEl: ".swiper-prev"
           },
           pagination: {
             el: '.swiper-pagination',
@@ -207,16 +228,9 @@
               direction: 'vertical',
               pagination: {
                 el: '.swiper-pagination',
-                 type: 'fraction',
-                 clickable: true,
-                 renderCustom: function (swiper, current, total) {
-                    function numberAppend(d) {
-                        return (d < 10) ? '0' + d.toString() : d.toString();
-                    }
-                    return numberAppend(current) + ' of ' + numberAppend(total); 
-                 }
+                type: 'fraction',
               },
-            },
+            }
           },
         };
         var backgroundSwiper = new Swiper("#background-slider", backgroundSwiperOptions);
@@ -243,17 +257,6 @@
                     };
                 });
                 $this.html(paras);
-                
-                /*$this.find('.line-text').each(function (index) {
-                    var characters = $(this).text().split("");
-
-                    $this = $(this);
-                    $this.empty();
-                    $.each(characters, function (i, el) {
-                    $this.append("<span>" + el + "</span");
-                    });
-
-                });*/
             });
         });    
         
@@ -265,6 +268,124 @@
               $('body').removeClass('darknav');
             }
         }
+        
+        $(window).on('load', function(){
+            $('body').addClass('loaded');
+            
+            TweenMax.to($('.section-overlay-mask.black'), 0.7, {
+                x: - 100+'%',
+            });
+            TweenMax.to($('.section-overlay-mask.pink'), 0.7, {
+                x: - 100+'%',
+                delay: .05
+
+            });
+            
+            if($(window).width() > 767){
+                
+                // Add span tag in each latter
+                $('.line-text').each(function (index) {
+                    var characters = $(this).text().split(""),
+                        delayTime = .5,
+                        $this = $(this);
+                    $this.empty();
+                    $.each(characters, function (i, el) {
+                        var transitionDelay = delayTime + (i * .03) + 's';
+                        $this.append("<span style='-webkit-transition-delay:"+transitionDelay+"; transition-delay:"+transitionDelay+";'>" + el + "</span");
+                    });
+
+                });
+                
+                // Move on mouse over
+                $(".moveElementWrap").mousemove(function (e) {
+                      var moveElement = $(this).find(".moveElement");
+                      var width = moveElement.outerWidth();
+                      var height = moveElement.outerHeight();
+
+                      var offset = $(this).offset();
+                      var newValueX = e.pageX - offset.left;
+                      var newValueY = e.pageY - offset.top;
+
+                      TweenMax.to(moveElement, 0.7, {
+                          left: newValueX,
+                          top: newValueY,
+                          marginLeft:-(width /2),
+                          marginTop:-(height /2),
+                      });
+                  });
+
+                  $(".moveElementWrap").mouseleave(function (e) {
+                      TweenMax.to($(".moveElement"), 0.7, {
+                          left: 0,
+                          top: 0,
+                          marginLeft: 0,
+                          marginTop: 0,
+                      });
+                  });
+
+
+                    // Move on mouse over
+                    $(".slideArrowWrap").mousemove(function (e) {
+                      var moveElement = $(this).parent().find(".moveElement");
+                      var width = moveElement.outerWidth();
+                      var height = moveElement.outerHeight();
+
+                      var offset = $(this).offset();
+                      var newValueX = e.pageX - offset.left;
+                      var newValueY = e.pageY - offset.top;
+
+                      TweenMax.to(moveElement, 0.7, {
+                          left: newValueX,
+                          top: newValueY,
+                          marginLeft:-(width /2),
+                          marginTop:-(height /2),
+                      });
+                    });
+
+                    $(".slideArrowWrap").mouseleave(function (e) {
+                      TweenMax.to($(".moveElement"), 0.7, {
+                          left: 0,
+                          top: 0,
+                          marginLeft: 0,
+                          marginTop: 0,
+                      });
+                    });
+                    
+                    // Image Move mussion with mouse move
+                    var pixelToMove = 50;
+                    $('.full-screen-slider-section').mousemove(function(e){
+                          var moveElement = $(this).find('.slide-bg-wrap');
+                          var width = moveElement.outerWidth();
+                          var height = moveElement.outerHeight();
+                          var offset = $(this).offset();
+
+                          var newValueX = ((e.pageX - offset.left) / width)*pixelToMove;
+                          var newValueY = ((e.pageY - offset.top) / height)*pixelToMove;
+
+                          TweenMax.to(moveElement, 0.5, {
+                              x: - newValueX,
+                              y: - newValueY,
+                          });
+
+                    });
+                    
+                    // Image Move mussion with mouse move
+                    $(".full-screen-slider-section").mousemove(function (e) {
+                          var masOverlay = $(".video-mask");
+                          var width = masOverlay.innerWidth();
+                          var height = masOverlay.innerHeight();
+                          var newValueX = e.pageX - (width/2);
+                          var newValueY = e.pageY - (height/2);
+
+                          TweenMax.to(masOverlay, 0.7, {
+                              left: newValueX,
+                              top: newValueY,
+                              x: 0,
+                              y: 0,
+                          });
+                     });
+                }
+            })
     </script>
 </body>
 </html>
