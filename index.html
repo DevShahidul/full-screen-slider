@@ -40,7 +40,7 @@
                 </div>
                 <div class="swiper-slide image-slide">
                   <div class="slide-inner">
-                      <div class="slide-bg-wrap">
+                      <div class="slide-bg-wrap nomove">
                           <div class="slide-bg" style="background-image:url(img/header-cover-img3.jpg)">
                               <img src="img/mobile-slide3.jpg" alt="" class="mobi">
                           </div>
@@ -69,8 +69,10 @@
                                <div class="line-text">Digital Agency</div>
                            </div>
                            <div class="slide-content">
-                               Storytelling, branding and 
-                               digital experiences.
+                              Patriotic Painter- Everything is 
+                              designed. Few things we design 
+                              well. We design stall, digital 
+                              media and sketch portrait.
                            </div>             
                            <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
                        </div>
@@ -81,20 +83,9 @@
                                <div class="line-text">Digital Agency</div>
                            </div>
                            <div class="slide-content">
-                               Storytelling, branding and 
-                               digital experiences.
-                           </div>             
-                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
-                       </div>
-                    </div>
-                    <div class="swiper-slide black-content">
-                        <div class="slide-content-wrap">
-                           <div class="slide-title">
-                               <div class="line-text">Digital Agency</div>
-                           </div>
-                           <div class="slide-content">
-                               Storytelling, branding and 
-                               digital experiences.
+                              Stall Renovation- Our design 
+                              does not add a pleasant quality 
+                              to stall - it reinforces it.
                            </div>             
                            <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
                        </div>
@@ -105,8 +96,24 @@
                                <div class="line-text">Digital Agency</div>
                            </div>
                            <div class="slide-content">
-                               Storytelling, branding and 
-                               digital experiences.
+                              Sales Communication- No traffic 
+                              jams on the extra mile. 
+                              Our design for digital media is 
+                              to give you that extra mile. 
+                           </div>             
+                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
+                       </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content-wrap">
+                           <div class="slide-title">
+                               <div class="line-text">Digital Agency</div>
+                           </div>
+                           <div class="slide-content">
+                              Art &amp; Paintings- Painting 
+                              is just another way of keeping 
+                              a diary. Our sketches leave 
+                              the atmosphere calm.
                            </div>             
                            <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
                        </div>
@@ -355,7 +362,7 @@
                     // Image Move mussion with mouse move
                     var pixelToMove = 50;
                     $('.full-screen-slider-section').mousemove(function(e){
-                          var moveElement = $(this).find('.slide-bg-wrap');
+                          var moveElement = $(this).find('.slide-bg-wrap:not(.nomove)');
                           var width = moveElement.outerWidth();
                           var height = moveElement.outerHeight();
                           var offset = $(this).offset();
