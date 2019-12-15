@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Full screen slider</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/full.screen.slide.css">
 </head>
 <body>
    <section class="full-screen-slider-section">
-      <div class="section-overlay-mask pink"></div>
-      <div class="section-overlay-mask black"></div>
+      <div class="preloader">
+          <div class="section-overlay-mask pink"></div>
+          <div class="section-overlay-mask black"></div>
+          <div class="counter"></div>
+      </div>
        <div class="background-slider">
             <div class="swiper-container" id="background-slider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide video-slide">
                     <div class="slide-video">
-                       <img src="img/mobile-slide1.jpg" alt="" class="mobi">
+                       <img src="img/video-cover-img-mobi.jpg" alt="" class="mobi">
                        <div class="slide-inner video">
                           <video muted loop>
                               <source src="video/the_great_agency.mp4" type="video/mp4" />
@@ -31,16 +36,19 @@
                 </div>
                 <div class="swiper-slide image-slide">
                   <div class="slide-inner">
-                      <div class="slide-bg-wrap">
+                      <div class="slide-bg-wrap nomove">
                           <div class="slide-bg" style="background-image:url(img/header-cover-img.jpg)">
-                              <img src="img/mobile-slide2.jpg" alt="" class="mobi">
+                              <img src="img/mobile-slide1.jpg" alt="" class="mobi">
+                          </div>
+                          <div class="video-mask-wrap">
+                               <img src="img/video_mask.png" alt="Video mask" class="video-mask">
                           </div>
                       </div>
                   </div>
                 </div>
                 <div class="swiper-slide image-slide">
                   <div class="slide-inner">
-                      <div class="slide-bg-wrap nomove">
+                      <div class="slide-bg-wrap">
                           <div class="slide-bg" style="background-image:url(img/header-cover-img3.jpg)">
                               <img src="img/mobile-slide3.jpg" alt="" class="mobi">
                           </div>
@@ -49,9 +57,12 @@
                 </div>
                 <div class="swiper-slide image-slide">
                   <div class="slide-inner">
-                      <div class="slide-bg-wrap">
+                      <div class="slide-bg-wrap nomove">
                           <div class="slide-bg" style="background-image:url(img/header-cover-img4.jpg)">
                               <img src="img/mobile-slide4.jpg" alt="" class="mobi">
+                          </div>
+                          <div class="video-mask-wrap">
+                               <img src="img/video_mask.png" alt="Video mask" class="video-mask">
                           </div>
                       </div>
                   </div>
@@ -66,55 +77,65 @@
                     <div class="swiper-slide">
                         <div class="slide-content-wrap">
                            <div class="slide-title">
-                               <div class="line-text">Digital Agency</div>
+                               <div class="line-text">Patriotic Painter</div>
                            </div>
                            <div class="slide-content">
-                              Patriotic Painter- Everything is 
-                              designed. Few things we design 
-                              well. We design stall, digital 
-                              media and sketch portrait.
-                           </div>             
+                              <div class="body-copy">
+                              Everything is designed. Few things we  design well.
+                              We design stall, digital media and sketch portrait.
+                              </div>
+                              <div class="body-copy-two"></div>
+                           </div> 
+                           <div class="slide-content-two"></div>            
                            <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
                        </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-content-wrap">
                            <div class="slide-title">
-                               <div class="line-text">Digital Agency</div>
+                               <div class="line-text">Stall Renovation</div>
                            </div>
                            <div class="slide-content">
-                              Stall Renovation- Our design 
-                              does not add a pleasant quality 
-                              to stall - it reinforces it.
-                           </div>             
+                              <div class="body-copy">
+                              Our design does not add a pleasant quality to stall 
+                              - it reinforces it.
+                              </div>
+                              <div class="body-copy-two"></div>
+                           </div>  
+                           <div class="slide-content-two"></div>           
+                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">Browse Gallery</a></div>
+                       </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-content-wrap">
+                           <div class="slide-title">
+                               <div class="line-text">Sales Communication</div>
+                           </div>
+                           <div class="slide-content">
+                              <div class="body-copy">
+                              No traffic jams on the extra mile. 
+                              Our design for digital media is  to give you
+                              that extra mile.  
+                              </div>
+                              <div class="body-copy-two"></div>
+                           </div>   
+                           <div class="slide-content-two"></div>          
                            <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
                        </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="slide-content-wrap">
                            <div class="slide-title">
-                               <div class="line-text">Digital Agency</div>
+                               <div class="line-text">Art &amp; Paintings</div>
                            </div>
                            <div class="slide-content">
-                              Sales Communication- No traffic 
-                              jams on the extra mile. 
-                              Our design for digital media is 
-                              to give you that extra mile. 
-                           </div>             
-                           <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
-                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-content-wrap">
-                           <div class="slide-title">
-                               <div class="line-text">Digital Agency</div>
-                           </div>
-                           <div class="slide-content">
-                              Art &amp; Paintings- Painting 
-                              is just another way of keeping 
-                              a diary. Our sketches leave 
-                              the atmosphere calm.
-                           </div>             
+                              <div class="body-copy">
+                              Painting is just another way of keeping a diary.
+                              Our sketches leave the atmosphere calm.
+                              </div>
+                              <div class="body-copy-two"></div>
+                           </div>  
+                           <div class="slide-content-two"></div>           
                            <div class="slide-link moveElementWrap"><a href="#" class="line-text moveElement">What we do</a></div>
                        </div>
                     </div>
@@ -253,20 +274,35 @@
             left: paginationControllWidth + 25
         });
         
-        $('.swiper-slide .slide-content').each(function(){
-            var $this = $(this);
-            $(function() {
-                var lines = $this.text().split('\n');
-                var paras = '';
-                $.each(lines, function(i, line) {
-                    line = $.trim(line);
-                    if (line) {
-                        paras += '<p class="line-text">' + line + '</p>';
-                    };
+        if($(window).width() > 991){
+            $('.swiper-slide .body-copy').each(function(){
+                var $this = $(this);
+                $(function() {
+                    var lines = $this.text().split('\n');
+                    var paras = '';
+                    $.each(lines, function(i, line) {
+                        line = $.trim(line);
+                        if (line) {
+                            paras += '<p class="line-text">' + line + '</p>';
+                        };
+                    });
+                    $this.html(paras);
                 });
-                $this.html(paras);
+            });   
+        }
+        if($(window).width() < 992){
+            wordWrap();
+            
+            $('.content-slider-inner .slide-content-wrap').each(function(){
+                var $this = $(this),
+                    parentWidth = $this.parent().outerWidth(),
+                    mainWidth = parentWidth - paginationControllWidth;
+                $this.css({
+                   width: mainWidth - 20 
+                });
+
             });
-        });    
+        }
         
         // Add class for color change
         function darkNav() {
@@ -277,19 +313,31 @@
             }
         }
         
+        
         $(window).on('load', function(){
             $('body').addClass('loaded');
             
-            TweenMax.to($('.section-overlay-mask.black'), 0.7, {
-                x: - 100+'%',
-            });
-            TweenMax.to($('.section-overlay-mask.pink'), 0.7, {
-                x: - 100+'%',
-                delay: .05
+            var count = 0,
+                counter = setInterval(function(){
+                   if(count < 101) {
+                       $('.preloader .counter').text(count + '%');
+                       count++;
+                   }else{
+                       clearInterval(counter);
+                       
+                       TweenMax.to($('.section-overlay-mask.black'), 0.7, {
+                            x: - 100+'%',
+                       });
+                       TweenMax.to($('.section-overlay-mask.pink'), 0.7, {
+                            x: - 100+'%',
+                            delay: .05
 
-            });
+                       });
+                       $('.preloader').addClass('hide');
+                   }
+                }, 80);
             
-            if($(window).width() > 767){
+            if($(window).width() > 991){
                 
                 // Add span tag in each latter
                 $('.line-text').each(function (index) {
@@ -393,7 +441,41 @@
                           });
                      });
                 }
+            });
+        function wordWrap() {
+            $(".body-copy").each(function() {
+                var bdy = $(this);
+                var body2 = bdy.parent().find(".body-copy-two");
+                var text = $(bdy).text();
+                var html = $(bdy).html();
+                var bWidth = $(bdy).width();
+                var words = text.split(" ");
+                var span = "";
+                var word = "";
+                var allSpans = "";
+                var lastWord = "";
+                $(words).each(function(i, w) {
+                    if (lastWord != "") {
+                        w = lastWord + " " + w;
+                        lastWord = ""
+                    };
+                    word = w + " ";
+                    span = span + word;
+                    body2.append(word);
+                    if (body2.width() >= bWidth) {
+                        var wLen = word.length;
+                        span = span.slice(0, -wLen);
+                        lastWord = w + " ";
+                        allSpans = allSpans + "<p class='line-text'>" + $.trim(span) + "</p>";
+                        body2.html("");
+                        span = "";
+                        word = ""
+                    }
+                });
+                var lastSpan = "<p class='line-text'>" + body2.text() + "</p>";
+                $(bdy).html(allSpans + lastSpan)
             })
+        }
     </script>
 </body>
 </html>
