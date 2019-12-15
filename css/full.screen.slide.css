@@ -467,6 +467,15 @@ line-height: 26px;
 }
 
 
+@supports not (mix-blend-mode: multiply) {
+    .video-mask-wrap{
+        background-color: rgba(68, 83, 102, .3);
+    }
+    .video-mask-wrap img{
+        opacity: 0.03;
+    }
+}
+
 @-webkit-keyframes scaling {
     0% {
         transform: scale(1);
